@@ -1,0 +1,10 @@
+{% extends "employee_register/base.html" %}
+
+{% block content %}
+<form>
+    {% csrf_token %}
+    {{updateform}}
+    <a href=""><button>Update</button></a>
+    
+</form>
+{% endblock content %}

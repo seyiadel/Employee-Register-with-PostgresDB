@@ -1,0 +1,31 @@
+{% extends "employee_register/base.html" %}
+
+{% block content %}
+<div class="main">
+    <h1>Employee Register</h1>
+    <table>
+        <tr>
+            <th>Full Name </th>
+            <th> Mobile </th>
+            <th> Position </th>
+            <th>
+                <a href="{% url 'form' %}"><button>Add</button></a>
+            </th>
+        </tr>
+        <tbody>
+            {% for i in modelget %}
+                <tr>
+                <td>{{ i.fullname }}</td>
+                <td>{{ i.mobile }}</td>
+                <td>{{ i.position }}</td>
+                <td><a href="{% url 'update' i.id %}"><button>Update</button></a></td>
+                <td><a href="{% url 'delete' i.id %}"><button>Delete</button></a></td>
+                </tr>
+                
+            {% endfor %}
+            
+        </tbody>
+        
+    </table>
+</div>
+{% endblock content %}
